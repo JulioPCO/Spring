@@ -19,13 +19,13 @@ import org.springframework.test.web.servlet.MockMvc;
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(HomeController.class)
+@WebMvcTest(WebConfig.class)
 public class HomeControllerTest {
 @Autowired
 private MockMvc mockMvc;
 @Test
 public void testHomePage() throws Exception {
-    mockMvc.perform(get("/home"))
+    mockMvc.perform(get("/"))
     .andExpect(status().isOk())
 
     .andExpect(view().name("home"))
